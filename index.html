@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>MathLab Explorer | SMK Negeri 1 Salatiga</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- ========================================= -->
+    <!-- LOADING -->
+    <!-- ========================================= -->
+
+    <div id="loading-screen">
+
+        <div class="loader"></div>
+
+        <h2>MathLab Explorer</h2>
+
+    </div>
+
+
+    <!-- ========================================= -->
+    <!-- LANDING PAGE -->
+    <!-- ========================================= -->
+
+    <section id="landing-page" class="page active">
+
+        <div class="landing-content">
+
+            <div class="logo-circle">
+
+                🌿
+
+            </div>
+
+            <h1>
+
+                MathLab Explorer
+
+            </h1>
+
+            <h2>
+
+                Laboratorium Matematika Hidup
+
+            </h2>
+
+            <h3>
+
+                SMK Negeri 1 Salatiga
+
+            </h3>
+
+            <p>
+
+                Temukan matematika di lingkungan sekolahmu.
+
+                <br>
+
+                Amati. Ukur. Diskusikan. Temukan.
+
+            </p>
+
+            <button id="startBtn">
+
+                MULAI EKSPLORASI
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================= -->
+    <!-- DASHBOARD -->
+    <!-- ========================================= -->
+
+    <section id="dashboard" class="page">
+
+        <!-- Sidebar -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-header">
+
+                <h2>
+
+                    MathLab Explorer
+
+                </h2>
+
+            </div>
+
+
+            <div class="progress-box">
+
+                <h3>
+
+                    Progress Misi
+
+                </h3>
+
+                <ul>
+
+                    <li>
+
+                        <span class="status pending"></span>
+
+                        Masjid
+
+                    </li>
+
+                    <li>
+
+                        <span class="status pending"></span>
+
+                        Perpustakaan
+
+                    </li>
+
+                    <li>
+
+                        <span class="status pending"></span>
+
+                        Lapangan Basket
+
+                    </li>
+
+                    <li>
+
+                        <span class="status pending"></span>
+
+                        Lapangan Upacara
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="main-content">
+
+            <header>
+
+                <h1>
+
+                    Pilih Lokasi Eksplorasi
+
+                </h1>
+
+                <p>
+
+                    Klik salah satu lokasi pada denah.
+
+                </p>
+
+            </header>
+
+
+            <div class="map-container">
+
+                <!--
+                Nanti denah sekolah akan dipasang di sini
+                -->
+
+                <img src="assets/denah.png"
+                    id="school-map"
+                    alt="Denah Sekolah">
+
+
+
+
+                <!-- =========================== -->
+
+                <!-- MARKER MASJID -->
+
+                <!-- =========================== -->
+
+                <button
+
+                    class="marker"
+
+                    id="marker-masjid"
+
+                    data-location="masjid">
+
+                    🕌
+
+                </button>
+
+
+
+
+                <!-- =========================== -->
+
+                <!-- MARKER PERPUSTAKAAN -->
+
+                <!-- =========================== -->
+
+                <button
+
+                    class="marker"
+
+                    id="marker-perpus"
+
+                    data-location="perpus">
+
+                    📚
+
+                </button>
+
+
+
+
+                <!-- =========================== -->
+
+                <!-- MARKER BASKET -->
+
+                <!-- =========================== -->
+
+                <button
+
+                    class="marker"
+
+                    id="marker-basket"
+
+                    data-location="basket">
+
+                    🏀
+
+                </button>
+
+
+
+
+                <!-- =========================== -->
+
+                <!-- MARKER UPACARA -->
+
+                <!-- =========================== -->
+
+                <button
+
+                    class="marker"
+
+                    id="marker-upacara"
+
+                    data-location="upacara">
+
+                    🚩
+
+                </button>
+
+            </div>
+
+        </main>
+
+    </section>
+
+
+
+    <!-- ========================================= -->
+    <!-- POPUP -->
+    <!-- ========================================= -->
+
+    <div class="popup-overlay" id="popup">
+
+        <div class="popup-card">
+
+            <button
+                class="close-btn"
+                id="closePopup">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+            <div id="popup-content">
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ========================================= -->
+    <!-- TEMPLATE MASJID -->
+    <!-- ========================================= -->
+
+    <template id="template-masjid">
+
+        <h2>
+
+            🕌 Masjid
+
+        </h2>
+
+        <span class="badge">
+
+            Bangun Datar
+
+        </span>
+
+        <h3>
+
+            Tujuan Misi
+
+        </h3>
+
+        <p>
+
+            Mengidentifikasi bangun datar yang terdapat
+            pada area masjid.
+
+        </p>
+
+        <h3>
+
+            Petunjuk
+
+        </h3>
+
+        <ul>
+
+            <li>Amati lingkungan sekitar.</li>
+
+            <li>Tentukan objek yang akan diamati.</li>
+
+            <li>Lakukan pengukuran secara mandiri.</li>
+
+            <li>Diskusikan hasil pengukuran bersama kelompok.</li>
+
+        </ul>
+
+        <h3>
+
+            Alat
+
+        </h3>
+
+        <ul>
+
+            <li>📏 Meteran</li>
+
+            <li>📒 Buku Catatan</li>
+
+            <li>✏ Pensil</li>
+
+        </ul>
+
+        <button class="mission-btn">
+
+            MULAI MISI
+
+        </button>
+
+    </template>
+
+
+
+
+    <!-- ========================================= -->
+    <!-- TEMPLATE PERPUSTAKAAN -->
+    <!-- ========================================= -->
+
+    <template id="template-perpus">
+
+        <h2>
+
+            📚 Perpustakaan
+
+        </h2>
+
+        <span class="badge">
+
+            Statistika
+
+        </span>
+
+        <h3>
+
+            Tujuan Misi
+
+        </h3>
+
+        <p>
+
+            Mengumpulkan data melalui observasi
+            kemudian mengolah data tersebut.
+
+        </p>
+
+        <h3>
+
+            Petunjuk
+
+        </h3>
+
+        <ul>
+
+            <li>Pilih objek sesuai arahan guru.</li>
+
+            <li>Catat seluruh data.</li>
+
+            <li>Susun dalam tabel.</li>
+
+            <li>Gunakan data tersebut untuk menyelesaikan tantangan.</li>
+
+        </ul>
+
+        <button class="mission-btn">
+
+            MULAI MISI
+
+        </button>
+
+    </template>
+
+
+
+
+    <!-- ========================================= -->
+    <!-- TEMPLATE BASKET -->
+    <!-- ========================================= -->
+
+    <template id="template-basket">
+
+        <h2>
+
+            🏀 Lapangan Basket
+
+        </h2>
+
+        <span class="badge">
+
+            Bangun Datar
+
+        </span>
+
+        <h3>
+
+            Tujuan Misi
+
+        </h3>
+
+        <p>
+
+            Mengidentifikasi bentuk lapangan
+            dan melakukan pengukuran.
+
+        </p>
+
+        <button class="mission-btn">
+
+            MULAI MISI
+
+        </button>
+
+    </template>
+
+
+
+
+    <!-- ========================================= -->
+    <!-- TEMPLATE UPACARA -->
+    <!-- ========================================= -->
+
+    <template id="template-upacara">
+
+        <h2>
+
+            🚩 Lapangan Upacara
+
+        </h2>
+
+        <span class="badge">
+
+            Statistika
+
+        </span>
+
+        <h3>
+
+            Tujuan Misi
+
+        </h3>
+
+        <p>
+
+            Mengumpulkan data hasil observasi
+            di lingkungan lapangan.
+
+        </p>
+
+        <button class="mission-btn">
+
+            MULAI MISI
+
+        </button>
+
+    </template>
+
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1037 @@
+/* ===========================================
+   MATHLAB EXPLORER
+   STYLE.CSS
+=========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#f5f7fb;
+
+    color:#2d3436;
+
+    overflow:hidden;
+
+}
+
+/* ===========================================
+   WARNA
+=========================================== */
+
+:root{
+
+    --primary:#2E7D32;
+
+    --secondary:#66BB6A;
+
+    --accent:#FBC02D;
+
+    --white:#ffffff;
+
+    --background:#f5f7fb;
+
+    --text:#263238;
+
+    --shadow:0 15px 35px rgba(0,0,0,.12);
+
+    --radius:18px;
+
+}
+
+/* ===========================================
+   HALAMAN
+=========================================== */
+
+.page{
+
+    display:none;
+
+    width:100vw;
+
+    height:100vh;
+
+}
+
+.page.active{
+
+    display:flex;
+
+}
+
+/* ===========================================
+   LOADING
+=========================================== */
+
+#loading-screen{
+
+    position:fixed;
+
+    inset:0;
+
+    background:linear-gradient(135deg,#2E7D32,#81C784);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    z-index:9999;
+
+}
+
+.loader{
+
+    width:75px;
+
+    height:75px;
+
+    border:8px solid rgba(255,255,255,.25);
+
+    border-top:8px solid white;
+
+    border-radius:50%;
+
+    animation:spin 1s linear infinite;
+
+    margin-bottom:20px;
+
+}
+
+@keyframes spin{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/* ===========================================
+   LANDING PAGE
+=========================================== */
+
+#landing-page{
+
+    background:
+
+    linear-gradient(rgba(255,255,255,.85),
+
+    rgba(255,255,255,.92)),
+
+    url("assets/bg.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+}
+
+.landing-content{
+
+    width:min(90%,700px);
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:55px;
+
+    box-shadow:var(--shadow);
+
+    animation:fadeUp 1s;
+
+}
+
+.logo-circle{
+
+    width:120px;
+
+    height:120px;
+
+    background:#E8F5E9;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:60px;
+
+    margin:auto;
+
+    margin-bottom:25px;
+
+}
+
+.landing-content h1{
+
+    font-size:50px;
+
+    color:var(--primary);
+
+}
+
+.landing-content h2{
+
+    margin-top:8px;
+
+    font-weight:500;
+
+    color:#444;
+
+}
+
+.landing-content h3{
+
+    margin-top:6px;
+
+    color:#777;
+
+    font-weight:400;
+
+}
+
+.landing-content p{
+
+    margin:30px 0;
+
+    line-height:1.8;
+
+    color:#555;
+
+    font-size:18px;
+
+}
+
+#startBtn{
+
+    border:none;
+
+    padding:18px 45px;
+
+    border-radius:40px;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    font-weight:600;
+
+}
+
+#startBtn:hover{
+
+    transform:translateY(-4px);
+
+    background:#1B5E20;
+
+    box-shadow:0 15px 30px rgba(0,0,0,.15);
+
+}
+
+/* ===========================================
+   ANIMASI
+=========================================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(50px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+/* ===========================================
+   DASHBOARD
+=========================================== */
+
+#dashboard{
+
+    display:flex;
+
+    width:100%;
+
+    height:100vh;
+
+    background:var(--background);
+
+}
+
+/* ===========================================
+   SIDEBAR
+=========================================== */
+
+.sidebar{
+
+    width:300px;
+
+    background:var(--primary);
+
+    color:white;
+
+    display:flex;
+
+    flex-direction:column;
+
+    padding:30px 25px;
+
+    box-shadow:5px 0 20px rgba(0,0,0,.15);
+
+}
+
+.sidebar-header{
+
+    margin-bottom:35px;
+
+}
+
+.sidebar-header h2{
+
+    font-size:28px;
+
+    font-weight:700;
+
+}
+
+.sidebar-header p{
+
+    opacity:.8;
+
+    font-size:14px;
+
+    margin-top:5px;
+
+}
+
+/* ===========================================
+   PROGRESS
+=========================================== */
+
+.progress-box{
+
+    background:rgba(255,255,255,.12);
+
+    border-radius:18px;
+
+    padding:20px;
+
+}
+
+.progress-box h3{
+
+    margin-bottom:20px;
+
+    font-size:20px;
+
+}
+
+.progress-box ul{
+
+    list-style:none;
+
+}
+
+.progress-box li{
+
+    display:flex;
+
+    align-items:center;
+
+    margin-bottom:18px;
+
+    font-size:17px;
+
+}
+
+.status{
+
+    width:18px;
+
+    height:18px;
+
+    border-radius:50%;
+
+    margin-right:12px;
+
+    display:inline-block;
+
+}
+
+.pending{
+
+    background:#FFC107;
+
+}
+
+.done{
+
+    background:#4CAF50;
+
+}
+
+.locked{
+
+    background:#CFD8DC;
+
+}
+
+/* ===========================================
+   MAIN CONTENT
+=========================================== */
+
+.main-content{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    padding:40px;
+
+    overflow:auto;
+
+}
+
+.main-content header{
+
+    margin-bottom:25px;
+
+}
+
+.main-content header h1{
+
+    font-size:38px;
+
+    color:var(--primary);
+
+    margin-bottom:10px;
+
+}
+
+.main-content header p{
+
+    color:#666;
+
+    font-size:18px;
+
+}
+
+/* ===========================================
+   MAP
+=========================================== */
+
+.map-container{
+
+    flex:1;
+
+    position:relative;
+
+    background:white;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+#school-map{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:contain;
+
+    user-select:none;
+
+}
+
+/* ===========================================
+   MARKER
+=========================================== */
+
+.marker{
+
+    position:absolute;
+
+    width:60px;
+
+    height:60px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    font-size:28px;
+
+    background:white;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.18);
+
+    transition:.3s;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    animation:bounce 2.5s infinite;
+
+}
+
+.marker:hover{
+
+    transform:scale(1.15);
+
+}
+
+/* ===========================================
+   POSISI MARKER
+   (sementara)
+=========================================== */
+
+#marker-masjid{
+
+    top:28%;
+
+    left:18%;
+
+}
+
+#marker-perpus{
+
+    top:40%;
+
+    right:18%;
+
+}
+
+#marker-basket{
+
+    bottom:22%;
+
+    left:28%;
+
+}
+
+#marker-upacara{
+
+    bottom:16%;
+
+    right:25%;
+
+}
+
+/* ===========================================
+   ANIMASI MARKER
+=========================================== */
+
+@keyframes bounce{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+/* ===========================================
+   POPUP
+=========================================== */
+
+.popup-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    backdrop-filter:blur(8px);
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:999;
+
+    padding:20px;
+
+}
+
+.popup-overlay.active{
+
+    display:flex;
+
+}
+
+.popup-card{
+
+    background:white;
+
+    width:min(95%,550px);
+
+    border-radius:22px;
+
+    padding:35px;
+
+    position:relative;
+
+    animation:popupShow .35s ease;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.25);
+
+}
+
+@keyframes popupShow{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.85);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+/* ===========================================
+   CLOSE BUTTON
+=========================================== */
+
+.close-btn{
+
+    position:absolute;
+
+    top:15px;
+
+    right:18px;
+
+    width:40px;
+
+    height:40px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#ECEFF1;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.close-btn:hover{
+
+    background:#CFD8DC;
+
+}
+
+.close-btn i{
+
+    font-size:18px;
+
+}
+
+/* ===========================================
+   BADGE
+=========================================== */
+
+.badge{
+
+    display:inline-block;
+
+    margin:15px 0;
+
+    padding:8px 18px;
+
+    border-radius:50px;
+
+    background:#E8F5E9;
+
+    color:#2E7D32;
+
+    font-weight:600;
+
+}
+
+/* ===========================================
+   POPUP CONTENT
+=========================================== */
+
+.popup-card h2{
+
+    color:var(--primary);
+
+    margin-bottom:10px;
+
+}
+
+.popup-card h3{
+
+    margin-top:25px;
+
+    margin-bottom:10px;
+
+    color:#37474F;
+
+}
+
+.popup-card p{
+
+    line-height:1.8;
+
+    color:#555;
+
+}
+
+.popup-card ul{
+
+    margin-left:22px;
+
+    margin-top:10px;
+
+}
+
+.popup-card li{
+
+    margin-bottom:10px;
+
+    line-height:1.6;
+
+}
+
+/* ===========================================
+   MISSION BUTTON
+=========================================== */
+
+.mission-btn{
+
+    margin-top:30px;
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.mission-btn:hover{
+
+    background:#1B5E20;
+
+    transform:translateY(-2px);
+
+}
+
+/* ===========================================
+   SCROLLBAR
+=========================================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#81C784;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#ECEFF1;
+
+}
+
+/* ===========================================
+   RESPONSIVE TABLET
+=========================================== */
+
+@media(max-width:992px){
+
+.sidebar{
+
+    width:240px;
+
+}
+
+.main-content{
+
+    padding:25px;
+
+}
+
+.landing-content h1{
+
+    font-size:42px;
+
+}
+
+}
+
+/* ===========================================
+   RESPONSIVE HP
+=========================================== */
+
+@media(max-width:768px){
+
+body{
+
+    overflow:auto;
+
+}
+
+#dashboard{
+
+    flex-direction:column;
+
+}
+
+.sidebar{
+
+    width:100%;
+
+    height:auto;
+
+    padding:20px;
+
+}
+
+.progress-box{
+
+    margin-top:15px;
+
+}
+
+.main-content{
+
+    padding:20px;
+
+}
+
+.main-content header h1{
+
+    font-size:28px;
+
+}
+
+.map-container{
+
+    height:70vh;
+
+}
+
+.marker{
+
+    width:52px;
+
+    height:52px;
+
+    font-size:24px;
+
+}
+
+.popup-card{
+
+    padding:25px;
+
+}
+
+.landing-content{
+
+    padding:35px;
+
+}
+
+.landing-content h1{
+
+    font-size:34px;
+
+}
+
+.landing-content p{
+
+    font-size:16px;
+
+}
+
+.logo-circle{
+
+    width:90px;
+
+    height:90px;
+
+    font-size:45px;
+
+}
+
+}
+
+/* ===========================================
+   RESPONSIVE HP KECIL
+=========================================== */
+
+@media(max-width:480px){
+
+.main-content{
+
+    padding:15px;
+
+}
+
+.map-container{
+
+    height:60vh;
+
+}
+
+.marker{
+
+    width:46px;
+
+    height:46px;
+
+    font-size:20px;
+
+}
+
+.popup-card{
+
+    width:100%;
+
+    border-radius:18px;
+
+}
+
+#startBtn{
+
+    width:100%;
+
+}
+
+}
+
+/* ===========================================
+   FADE
+=========================================== */
+
+.fade{
+
+    animation:fade .4s ease;
+
+}
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
